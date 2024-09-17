@@ -16,6 +16,12 @@ on:
     branches: ["{{is_default_branch}}"]
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      docker_images:
+        description: '请填写docker镜像名称 多个用英文逗号分开'
+        required: true
+        default: 'speedtest:latest'  # 设置默认的 Docker 镜像列表
 
 env:
   # Use docker.io for Docker Hub if empty
